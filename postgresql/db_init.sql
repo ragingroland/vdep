@@ -1,0 +1,11 @@
+create database db_vdep;
+create user lydemere with password 'easy12345';
+grant connect on database db_vdep to lydemere;
+\c db_vdep;
+create schema if not exists s_vdep;
+grant all on schema s_vdep to lydemere;
+set search_path to s_vdep, public;
+create table if not exists s_vdep.t_usertable (id uuid, insertion_date timestamp, entered_user varchar);
+grant all on all tables in schema s_vdep to lydemere;
+alter default privileges in schema s_vdep grant all on tables to lydemere;
+insert into s_vdep.t_usertable select gen_random_uuid(), clock_timestamp(), current_user;
