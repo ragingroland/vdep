@@ -11,6 +11,8 @@
         pip install -r requirements.txt
         deactivate
 
+    Создать файл "postgres_password.txt" в котором прописать пароль для суперпользователя postgres.
+
     Сборка образа в Docker:
         docker compose build --no-cache
         docker compose up
