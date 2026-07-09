@@ -192,7 +192,7 @@ airflow-triggerer
 
 ---
 
-## Project structure
+## Структура проекта
 
 ```
 vdep/
@@ -226,32 +226,32 @@ vdep/
 
 ---
 
-## Running locally
+## Локальный запуск
 
-### Requirements
+### Требования
 
-Installed:
+Установить:
 
 * Docker
 * Docker Compose
 * Python 3.x
-* WSL2 (recommended)
+* WSL2 (под Windows)
 
 ---
 
-### 1. Clone repository
+### 1. Клонировать репозиторий
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/ragingroland/vdep.git
 
 cd vdep
 ```
 
 ---
 
-### 2. Create environment file
+### 2. Создание файла .env
 
-Create `.env`:
+Создать `.env`:
 
 ```env
 POSTGRES_USER=postgres
@@ -267,7 +267,7 @@ _AIRFLOW_WWW_USER_PASSWORD=airflow
 
 ---
 
-### 3. Build and start containers
+### 3. Build и запуск контейнеров
 
 ```bash
 docker compose build
@@ -277,15 +277,15 @@ docker compose up
 
 ---
 
-### 4. Access Airflow UI
+### 4. Airflow UI
 
-Open:
+Перейти:
 
 ```
 http://localhost:8080
 ```
 
-Default credentials:
+Стандартные данные для входа:
 
 ```
 login:
@@ -297,33 +297,33 @@ airflow
 
 ---
 
-## Database users
+## Пользователи БД
 
-The project uses separated database users:
+В проекте используется несколько пользователей:
 
 ```
 postgres
     |
-    +-- administrative user
+    +-- суперюзер, администратор
 
 airflow
     |
-    +-- Airflow metadata database
+    +-- данные Airflow
 
 lydemere
     |
-    +-- DWH development user
+    +-- разработчик
 ```
 
-The principle:
+Принципы:
 
-* administrative operations are separated;
-* application users have only required permissions;
-* database ownership is explicitly managed.
+* раздельные операции;
+* пользователи приложения имеют отдельные права;
+* явно обозначенный владелец БД.
 
 ---
 
-## Future plans
+## Планы
 
 Roadmap:
 
