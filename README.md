@@ -201,6 +201,7 @@ vdep/
 │   ├── config/
 │   ├── logs/
 │   └── plugins/
+|   └── Dockefile
 │
 ├── postgresql/
 │   ├── Dockerfile
@@ -208,10 +209,18 @@ vdep/
 │
 ├── scripts/
 │   └── dags/
+|   └── python/
+|   └── sandbox/
+|   └── sql/
+|       └── dwh/
+|           └── schema_dm/
+|           └── schema_raw/
+|           └── schema_stg/
 │
 ├── docker-compose.yml
 ├── requirements.txt
 ├── .env.example
+├── postgres_password.example
 └── README.md
 ```
 
