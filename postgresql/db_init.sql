@@ -1,7 +1,17 @@
 create database db_vdep;
+create database airflow;
 
 create user lydemere with password 'easy12345';
+create user airflow with password 'easy12345';
 grant all on database db_vdep to lydemere;
+grant all on database airflow to airflow;
+alter database airflow owner to airflow;
+alter database db_vdep owner to lydemere;
+
+\c airflow;
+
+grant all on schema public to airflow;
+alter schema public owner to airflow;
 
 \c db_vdep;
 
